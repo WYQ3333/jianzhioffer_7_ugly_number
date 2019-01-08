@@ -12,8 +12,8 @@ typedef struct N_uglynumber{
 class Solution {
 public:
 	bool Is_prime_number(int index){
-		int i = 1;
-		for (i = 1; i < index; ++i){
+		int i = 2;
+		for (i = 2; i < index; ++i){
 			if (index%i == 0){
 				return false;
 			}
@@ -64,7 +64,8 @@ public:
 int main(){
 	Solution s;
 	/*cout<<s.Is_Ugly_number(14)<<endl;*/
-	cout<<s.GetUglyNumber_Solution(100)<<endl;//获得第一个丑数
+	cout << s.Is_Ugly_number(13)<<endl;
+	cout<<s.GetUglyNumber_Solution(14)<<endl;//获得第一个丑数
 	
 	system("pause");
 	return 0;
