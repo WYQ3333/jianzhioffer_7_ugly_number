@@ -42,8 +42,8 @@ public:
 		N_uglynumber number;
 		number.N = 1;
 		number.ugly_number = 1;
-		int ugly_number=1;
-		int i = 1;
+		//int ugly_number=1;
+		int i = 2;
 		while (1){
 			if (number.N < index){
 				if (Is_Ugly_number(i)){
@@ -55,18 +55,16 @@ public:
 			else if (number.N == index){
 				return number.ugly_number;
 			}
-			else{
-				++i;
-			}
+			++i;
 		}
-		return ugly_number;
+		return number.ugly_number;
 	}
 };
 
 int main(){
 	Solution s;
 	/*cout<<s.Is_Ugly_number(14)<<endl;*/
-	cout<<s.GetUglyNumber_Solution(7)<<endl;//获得第一个丑数
+	cout<<s.GetUglyNumber_Solution(100)<<endl;//获得第一个丑数
 	
 	system("pause");
 	return 0;
