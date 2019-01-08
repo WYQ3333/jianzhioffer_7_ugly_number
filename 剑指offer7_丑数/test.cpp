@@ -1,4 +1,6 @@
 #include<iostream>
+#include<stdlib.h>
+
 using namespace std;
 
 //把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，
@@ -13,7 +15,7 @@ class Solution {
 public:
 	bool Is_prime_number(int index){
 		int i = 2;
-		for (i = 2; i < index; ++i){
+		for (i = 2; i <= sqrt(index); ++i){
 			if (index%i == 0){
 				return false;
 			}
@@ -53,7 +55,7 @@ public:
 				}
 			}
 			else if (number.N == index){
-				return number.ugly_number;
+				break;
 			}
 			++i;
 		}
@@ -65,7 +67,7 @@ int main(){
 	Solution s;
 	/*cout<<s.Is_Ugly_number(14)<<endl;*/
 	cout << s.Is_Ugly_number(13)<<endl;
-	cout<<s.GetUglyNumber_Solution(14)<<endl;//获得第一个丑数
+	cout<<s.GetUglyNumber_Solution(17)<<endl;//获得第一个丑数
 	
 	system("pause");
 	return 0;
