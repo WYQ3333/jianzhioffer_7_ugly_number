@@ -4,10 +4,10 @@ using namespace std;
 //把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，
 //但14不是，因为它包含质因子7。
 //习惯上我们把1当做是第一个丑数。求按从小到大的顺序的第N个丑数
-//typedef struct N_uglynumber{
-//	int ugly_number;
-//	int N;
-//}N_uglynumber;
+typedef struct N_uglynumber{
+	int ugly_number;
+	int N;
+}N_uglynumber;
 
 class Solution {
 public:
@@ -39,16 +39,24 @@ public:
 	}
 
 	int GetUglyNumber_Solution(int index) {
-		//N_uglynumber number;
-		//number.N = 1;
-		//number.ugly_number = 1;
+		N_uglynumber number;
+		number.N = 1;
+		number.ugly_number = 1;
 		int ugly_number=1;
 		int i = 1;
-		for (i; i <= index; ++i){
-			if (Is_Ugly_number(i)){
-				//number.N++;
-				//number.ugly_number = i;
-				ugly_number = i;
+		while (1){
+			if (number.N < index){
+				if (Is_Ugly_number(i)){
+					number.N++;
+					number.ugly_number = i;
+					/*ugly_number = i;*/
+				}
+			}
+			else if (number.N == index){
+				return number.ugly_number;
+			}
+			else{
+				++i;
 			}
 		}
 		return ugly_number;
